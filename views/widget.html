@@ -1,0 +1,25 @@
+<div id="ec-quote-container">
+    <div id="ec-quote-content">
+      <blockquote>
+      {% if data.widget.quote %}
+        <p>
+          {{ data.widget.quote }}
+        </p>
+      {% endif %}
+      </blockquote>
+    </div>
+      {% if data.widget.author %}
+    <div id="ec-quote-author">
+      <p>
+        - {{ data.widget.author }}
+      </p>
+    </div>
+      {% endif %}
+      {% if data.widget.author_info %}
+    <div id="ec-quote-author-info">
+      <p>
+        {{ data.widget.author_info }}
+      </p>
+    </div>
+    {% endif %}
+</div>
