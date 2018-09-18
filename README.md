@@ -4,6 +4,14 @@ for your content. A mandatory quote content region, along with two optional
 regions for an author name and any other author information that may be
 important to include.
 
+## Example
+This widget is meant to have data entered in the following manner:
+
+Quote: 'This statement is the content of the quote'
+Author: 'Porter L'
+Author Info: 'An Earlham College student from Berea, KY'
+
+
 ## Install
 From within your apostrophe project `npm install --save ec-quote-widgets`
 
