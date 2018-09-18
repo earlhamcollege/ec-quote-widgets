@@ -21,5 +21,8 @@ module.exports = {
       label: 'Author Info',
       required: false
     }
-  ]
+  ],
+  construct: function (self, options) {
+    self.pushAsset('stylesheet','ec-quote');
+  }
 };

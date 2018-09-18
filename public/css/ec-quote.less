@@ -1,0 +1,71 @@
+#ec-quote-content{
+  font-size: 15px;
+  margin-top: 20px;
+  padding: 20px 20px;
+  background-color: #dfdfdf;
+}
+#ec-quote-author{
+  font-size: 15px;
+  color: black;
+  padding-left:100px;
+  background-color: #dfdfdf;
+}
+#ec-quote-author-info{
+  font-size: 12px;
+  color: gray;
+  padding-left: 120px;
+  background-color: #dfdfdf;
+}
+#ec-quote-container{
+  background-color: #efefef;
+  margin: 0 auto;
+  max-width: 1144px;
+  padding: 10px 10px;
+
+  p {
+    font-size: 18px;
+    line-height: 1.5em;
+    margin-bottom: 0px;
+  }
+
+  blockquote {
+    width: 100%;
+    padding: 20px 20px;
+    position: relative;
+    margin-bottom: 28px;
+    border:none;
+    &::before, &::after {
+      top: 0;
+      bottom: 0;
+      width: 25px;
+      position: absolute;
+    }
+    &::before {
+      right: 90%;
+    }
+    &::after {
+      left: 90%;
+    }
+    p {
+      margin: 0;
+      font-size: 16px;
+      color: black;
+      &::before {
+        top: 0;
+        left: 16px;
+        content: '“';
+        font-size: 6em;
+        position: absolute;
+        text-shadow: -3px 0 #c2c2c2;
+      }
+      &::after {
+        right: 16px;
+        content: '”';
+        bottom: -32px;
+        font-size: 6em;
+        position: absolute;
+        text-shadow: 3px 0 #c2c2c2;
+      }
+    }
+  }
+}
