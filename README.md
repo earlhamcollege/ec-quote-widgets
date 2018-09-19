@@ -15,8 +15,7 @@ Author Info: 'An Earlham College student from Berea, KY'
 ## Install
 From within your apostrophe project `npm install --save ec-quote-widgets`
 
-## Configuration
-In app.js:
+Include widget in app.js:
 
 ```
   modules: {
@@ -24,6 +23,15 @@ In app.js:
     // ... other modules
 }
 ```
+## Configuration
+### Colors
+In css/variables.less, colors are assigned to variable names like this:
+```
+@quote_author_color3: #861f41;
+@quote_author_color4: #6dc6e8;
+```
+These hex values can be edited without impacting the functionality.
+
 
 ## Screenshots
 ![Alt text](/demo/screenshot1.png?raw=true "screenshot 1")
