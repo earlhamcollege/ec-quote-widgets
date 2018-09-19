@@ -1,20 +1,25 @@
-<div id="ec-quote-container">
+<div id="ec-quote-container" class="ec-quote-container-{{data.widget.quote_container_color}}">
+
     <div id="ec-quote-content">
       <blockquote>
       {% if data.widget.quote %}
         <p>
-          {{ data.widget.quote }}
+          <strong>{{ data.widget.quote }}</strong>
         </p>
       {% endif %}
       </blockquote>
     </div>
+
       {% if data.widget.author %}
     <div id="ec-quote-author">
-      <p>
-        - {{ data.widget.author }}
-      </p>
+      <span class="ec-quote-author-color-{{data.widget.quote_author_color}}">
+        <span class="ec-quote-text-color-{{data.widget.quote_text_color}}">
+          {{ data.widget.author }}
+        </span>
+      </span>
     </div>
       {% endif %}
+
       {% if data.widget.author_info %}
     <div id="ec-quote-author-info">
       <p>
@@ -22,4 +27,5 @@
       </p>
     </div>
     {% endif %}
+
 </div>

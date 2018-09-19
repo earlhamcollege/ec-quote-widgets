@@ -8,9 +8,7 @@ important to include.
 This widget is meant to have data entered in the following manner:
 
 Quote: 'This statement is the content of the quote'
-
 Author: 'Porter L'
-
 Author Info: 'An Earlham College student from Berea, KY'
 
 
@@ -26,3 +24,6 @@ In app.js:
     // ... other modules
 }
 ```
+
+## Screenshots
+![Screenshot](demo/screenshot.png)
