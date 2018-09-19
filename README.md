@@ -26,4 +26,4 @@ In app.js:
 ```
 
 ## Screenshots
-![Screenshot](demo/screenshot.png)
+![Alt text](/demo/screenshot1.png?raw=true "screenshot 1")
