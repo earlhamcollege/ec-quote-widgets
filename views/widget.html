@@ -1,12 +1,19 @@
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <div id="ec-quote-container" class="ec-quote-container-{{data.widget.quote_container_color}}">
 
     <div id="ec-quote-content">
       <blockquote>
-      {% if data.widget.quote %}
-        <p>
-          <strong>{{ data.widget.quote }}</strong>
-        </p>
-      {% endif %}
+        <div class="single-item">
+          {% for item in data.widget.quote_array %}
+            <div>
+              <p> {{ item.quote }} </p>
+              <p> {{ item.author }} </p>
+              <p> {{ item.author_info }} </p>
+            </div>
+
+          {% endfor %}
+        </div>
       </blockquote>
     </div>
 
@@ -27,5 +34,20 @@
       </p>
     </div>
     {% endif %}
+    <script type="text/javascript">
 
+      $(document).ready(function(){
+        $(".single-item").slick({
+          autoplay: true,
+          autoplaySpeed: 200,
+          arrows: false,
+          slidesToScroll:1,
+          slidesToShow:1,
+          dots: false,
+          fade: true,
+          speed: 500
+        });
+      });
+      console.log('success');
+    </script>
 </div>

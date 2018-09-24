@@ -3,23 +3,32 @@ module.exports = {
   contextual: true,
   label: 'EC Quote',
   addFields: [
+          //ARRAY FOR HOLDING QUOTE CONTENTS
     {
-      name: 'author',
-      type: 'string',
-      label: 'Author',
-      required: false
-    },
-    {
-      name: 'quote',
-      type: 'string',
-      label: 'Quote',
-      required: false
-    },
-    {
-      name: 'author_info',
-      type: 'string',
-      label: 'Author Info',
-      required: false
+      name: 'quote_array',
+      type: 'array',
+      label: 'Quote Array',
+      titleField: 'quote_array',
+      schema: [
+        {
+          name: 'author',
+          type: 'string',
+          label: 'Quote Author',
+          required: false
+        },
+        {
+          name: 'author_info',
+          type: 'string',
+          label: 'Quote Author Info',
+          required: false
+        },
+        {
+          name: 'quote',
+          type: 'string',
+          label: 'Quote Contents',
+          required: false
+        }
+      ]
     },
     {
       name: 'quote_author_color',
@@ -87,6 +96,9 @@ module.exports = {
   ],
   construct: function (self, options) {
     self.pushAsset('stylesheet','ec-quote');
-    self.pushAsset('stylesheet','variables')
+    self.pushAsset('stylesheet','variables');
+    self.pushAsset('stylesheet','slick');
+    self.pushAsset('stylesheet','slick-theme');
+    self.pushAsset('script','slick/slick.min');
   }
 };
