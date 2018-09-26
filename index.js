@@ -8,7 +8,6 @@ module.exports = {
       name: 'quote_array',
       type: 'array',
       label: 'Quote Array',
-      titleField: 'quote_array',
       schema: [
         {
           name: 'author',
@@ -29,6 +28,12 @@ module.exports = {
           required: false
         }
       ]
+    },
+    {
+      name: 'speed',
+      type: 'integer',
+      label: 'Display Rotate Speed (seconds)',
+      required: true
     },
     {
       name: 'quote_author_color',
@@ -97,8 +102,6 @@ module.exports = {
   construct: function (self, options) {
     self.pushAsset('stylesheet','ec-quote');
     self.pushAsset('stylesheet','variables');
-    self.pushAsset('stylesheet','slick');
-    self.pushAsset('stylesheet','slick-theme');
-    self.pushAsset('script','slick/slick.min');
+    self.pushAsset('stylesheet','carousel');
   }
 };

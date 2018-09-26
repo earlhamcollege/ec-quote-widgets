@@ -1,29 +1,29 @@
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <div id="ec-quote-container" class="ec-quote-container-{{data.widget.quote_container_color}}">
 
     <div id="ec-quote-content">
-      <blockquote>
-        <div class="single-item">
-          {% for item in data.widget.quote_array %}
-            <div>
-              <p> {{ item.quote }} </p>
-              <p> {{ item.author }} </p>
-              <p> {{ item.author_info }} </p>
-            </div>
 
-          {% endfor %}
-        </div>
-      </blockquote>
     </div>
+    <div id="slides">
 
+      {% for item in data.widget.quote_array %}
+      <div class="slide">
+        <blockquote>
+          <p> {{ item.quote }} </p>
+        </blockquote>
+        <p class="ec-quote-author" style=
+        "background-color:{{data.widget.quote_author_color}};
+        color: {{data.widget.quote_text_color}};
+        ">
+              {{ data.widget.author }}
+        </p>
+        <p class="ec-quote-author-info"> {{ item.author_info }} </p>
+      </div>
+      {% endfor %}
+
+    </div>
       {% if data.widget.author %}
     <div id="ec-quote-author">
-      <span class="ec-quote-author-color-{{data.widget.quote_author_color}}">
-        <span class="ec-quote-text-color-{{data.widget.quote_text_color}}">
-          {{ data.widget.author }}
-        </span>
-      </span>
+
     </div>
       {% endif %}
 
@@ -34,20 +34,21 @@
       </p>
     </div>
     {% endif %}
-    <script type="text/javascript">
 
-      $(document).ready(function(){
-        $(".single-item").slick({
-          autoplay: true,
-          autoplaySpeed: 200,
-          arrows: false,
-          slidesToScroll:1,
-          slidesToShow:1,
-          dots: false,
-          fade: true,
-          speed: 500
-        });
-      });
-      console.log('success');
-    </script>
+
 </div>
+<script>
+
+  var slides = document.querySelectorAll('#slides .slide');
+  var currentSlide = 0;
+  var next = 0;
+  var slideInterval = setInterval(nextSlide,4000);
+  console.log({{ data.widget.quote_array[0].id | json }});
+  function nextSlide() {
+      next = currentSlide + 1;
+      next = next % slides.length;
+      slides[currentSlide].className = 'slide';
+      slides[next].className = 'slide showing';
+      currentSlide = next;
+  }
+</script>
