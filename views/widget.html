@@ -1,39 +1,23 @@
-    <div id="slides">
-
-      {% for item in data.widget.quote_array %}
-        {% if loop.first %}
-          <div class="slide showing">
-        {% else %}
-          <div class="slide">
-        {% endif %}
-        <p class="ec-quote-content"> {{ item.quote }} </p>
-        <p class="ec-quote-author">
-          <span class="ec-quote-author-color-{{ data.widget.quote_author_color }}">
+<div class="ec-quote-container-{{ data.widget.quote_container_color }}">
+  <div id="slides">
+    {% for item in data.widget.quote_array %}
+      {% if loop.first %}
+        <div class="slide showing">
+      {% else %}
+        <div class="slide">
+      {% endif %}
+      <p class="ec-quote-content"> {{ item.quote }} </p>
+      <p class="ec-quote-author">
+        <span class="ec-quote-author-color-{{ data.widget.quote_author_color }}">
           <span class="ec-quote-text-color-{{ data.widget.quote_text_color }}">
             {{ item.author }}
           </span>
-          </span>
-        </p>
-        <p class="ec-quote-author-info"> {{ item.author_info }} </p>
-      </div>
-      {% endfor %}
-
-    </div>
-      {% if data.widget.author %}
-    <div id="ec-quote-author">
-
-    </div>
-      {% endif %}
-
-      {% if data.widget.author_info %}
-    <div id="ec-quote-author-info">
-      <p>
-        {{ data.widget.author_info }}
+        </span>
       </p>
-    </div>
-    {% endif %}
-
-
+      <p class="ec-quote-author-info"> {{ item.author_info }} </p>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 <script>
   //control vars
