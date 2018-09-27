@@ -1,49 +1,45 @@
-#ec-quote-content{
-}
-#ec-quote-author{
+.ec-quote-author{
   margin-left: 70px;
 
   span{
     padding:1px;
   }
 }
-#ec-quote-author-info{
-  margin-left: 100px;
+
+.ec-quote-author-info{
+  margin-left: 70px;
   color: darkgray;
 }
-#ec-quote-container{
-  max-width: 1144px;
 
-  blockquote {
-    &::before, &::after {
-      width: 25px;
-      position: absolute;
-    }
-    p {
-      margin: 0;
-      font-size: 16px;
-      color: black;
-      margin-top: 40px;
-      margin-left: 30px;
-      margin-right: 30px;
-      text-align: justify;
-
-      &::before {
-        top: 0;
-        left: 16px;
-        content: '“';
-        font-size: 6em;
-        position: absolute;
-        text-shadow: -3px 0 #c2c2c2;
-      }
-      &::after {
-        right: 16px;
-        content: '”';
-        bottom: -32px;
-        font-size: 6em;
-        position: absolute;
-        text-shadow: 3px 0 #c2c2c2;
-      }
-    }
-  }
+.ec-quote-content{
+  font-size: 20px;
+  margin: 0 auto;
+  quotes: "\201C""\201D""\2018""\2019";
+  padding: 10px 20px;
+  line-height: 1.4;
+  text-align: justify;
+  padding-left:20px;
+  padding-right:50px;
+}
+.ec-quote-content:before {
+  content: open-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: -10px;
+  position: absolute;
+  top: 30px;
+  font-size: 3em;
+  text-shadow: 2px 2px gray;
+}
+.ec-quote-content::after {
+  content: close-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: 10px;
+  position: relative;
+  top: 35px;
+  font-size: 3em;
+  text-shadow: 2px 2px gray;
 }
