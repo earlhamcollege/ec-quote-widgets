@@ -32,6 +32,7 @@ module.exports = {
     {
       name: 'speed',
       type: 'integer',
+      def: 5,
       label: 'Display Rotate Speed (seconds)',
       required: true
     },
