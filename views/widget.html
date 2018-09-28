@@ -6,7 +6,7 @@
       {% else %}
         <div class="slide">
       {% endif %}
-      <p class="ec-quote-content"> {{ item.quote }} </p>
+      <div class="ec-quote-content"> {{ apos.areas.richText(item.quote) }} </div>
       <p class="ec-quote-author">
         <span class="ec-quote-author-color-{{ data.widget.quote_author_color }}">
           <span class="ec-quote-text-color-{{ data.widget.quote_text_color }}">

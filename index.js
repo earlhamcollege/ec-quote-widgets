@@ -23,9 +23,12 @@ module.exports = {
         },
         {
           name: 'quote',
-          type: 'string',
           label: 'Quote Contents',
-          required: false
+          type: 'singleton',
+          widgetType: 'apostrophe-rich-text',
+          options: {
+              toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ]
+          }
         }
       ]
     },
