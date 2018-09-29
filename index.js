@@ -44,26 +44,25 @@ module.exports = {
       type: 'select',
       required: false,
       label: 'Select Highlight Color',
-      help: 'Color 0: White, Color 1: Yellow, Color 2: Red, Color 3: Maroon, Color 4: Blue',
       choices: [
         {
-          label: 'Color 0 (default)',
+          label: 'Color 0 (No Color)',
           value: '0'
         },
         {
-          label: 'Color 1',
+          label: 'Color 1 (Yellow)',
           value: '1'
         },
         {
-          label: 'Color 2',
+          label: 'Color 2 (Red)',
           value: '2'
         },
         {
-          label: 'Color 3',
+          label: 'Color 3 (Maroon)',
           value: '3'
         },
         {
-          label: 'Color 4',
+          label: 'Color 4 (Blue)',
           value: '4'
         }
       ]
@@ -73,14 +72,13 @@ module.exports = {
       type: 'select',
       required: false,
       label: 'Select Author Font Color',
-      help: 'Color 1: Black, Color 2: White',
       choices: [
         {
-          label: 'Color 1',
+          label: 'Color 1 (Black)',
           value: '1'
         },
         {
-          label: 'Color 2',
+          label: 'Color 2 (White)',
           value: '2'
         }
       ]
@@ -90,17 +88,28 @@ module.exports = {
       type: 'select',
       required: false,
       label: 'Select Background Color Widget',
-      help: 'Color 1: Cream, Color 2: White',
       choices: [
         {
-          label: 'Color 1',
+          label: 'Color 1 (Cream White)',
           value: '1'
         },
         {
-          label: 'Color 2',
+          label: 'Color 2 (White)',
           value: '2'
         }
       ]
+    }
+  ],
+  arrangeFields: [
+    {
+      name:'content',
+      label:'Content Settings',
+      fields: ['quote_array','speed']
+    },
+    {
+      name:'color',
+      label:'Color Settings',
+      fields: ['quote_author_color','quote_text_color','quote_container_color']
     }
   ],
   construct: function (self, options) {
