@@ -41,6 +41,13 @@ module.exports = {
       required: true
     },
     {
+      name: 'nav_toggle',
+      type: 'boolean',
+      label: 'Show or hide navigation for quotes',
+      required: true,
+      def: false
+    },
+    {
       name: 'quote_author_color',
       type: 'select',
       required: false,
@@ -105,7 +112,7 @@ module.exports = {
     {
       name:'content',
       label:'Content Settings',
-      fields: ['quote_array','speed']
+      fields: ['quote_array','speed','nav_toggle']
     },
     {
       name:'color',

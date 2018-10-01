@@ -23,10 +23,14 @@
 
 
   </div>
+
+  {% if data.widget.nav_toggle == true %}
   <div id="slideControls">
-    <div id="prevBtn" onclick="prevSlide()">⇦</div>
-    <div id="nextBtn" onclick="nextSlide()">⇨</div>
+    <div id="prevBtn" onclick="prevSlide()">◀</div>
+    <div id="nextBtn" onclick="nextSlide()">▶</div>
   </div>
+  {% endif %}
+
 </div>
 </div>
 
