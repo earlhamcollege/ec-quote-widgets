@@ -26,6 +26,7 @@ module.exports = {
           label: 'Quote Contents',
           type: 'singleton',
           widgetType: 'apostrophe-rich-text',
+          required: true,
           options: {
               toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ]
           }

@@ -1,13 +1,12 @@
 /*
-essential styles:
-these make the slideshow work
+These styles support the carousel transitions of the quote widget
 */
 
 #slides {
     position: relative;
     height: 300px;
     padding: 0px;
-    margin: 0px;  
+    margin: 0px;
 }
 
 .slide {
