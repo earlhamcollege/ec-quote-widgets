@@ -51,22 +51,26 @@ Fixed styles for quote widget
   margin-right:-30px;
 }
 #slideControls{
-  font-size: 20px;
-  background-color: #efefef;
+  font-size: 30px;
   display: table;
   margin: 0 auto;
 }
-#prevBtn{
+.nextBtn{
   display: inline;
-  cursor: crosshair;
-  margin-left:auto;
-  margin-right:0;
-  color: gray;
-}
-#nextBtn{
-  display: inline;
-  cursor: crosshair;
+  cursor: pointer;
   margin-right:auto;
   margin-left:0;
-  color: gray;
+  color: #cdcdcd;
+  transition-duration: 0.5s;
+}
+.nextBtn:hover{
+  color: black;
+}
+.nextBtnS{
+  display: inline;
+  cursor: pointer;
+  margin-right:auto;
+  margin-left:0;
+  color: black;
+  transition-duration: 0.5s;
 }
