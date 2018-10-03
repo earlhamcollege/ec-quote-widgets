@@ -50,27 +50,28 @@ Fixed styles for quote widget
   text-shadow: 2px 2px gray;
   margin-right:-30px;
 }
-#slideControls{
-  font-size: 30px;
-  display: table;
-  margin: 0 auto;
+.centerBtn{
+  width: 100%;
+  text-align: center;
 }
-.nextBtn{
+.btnParent{
+  text-align: center;
+  font-size: 20px;
   display: inline;
   cursor: pointer;
-  margin-right:auto;
-  margin-left:0;
-  color: #cdcdcd;
+}
+.nextBtn{
+  display: inline-block;
+  vertical-align: middle;
+  color: gray;
+  transition-duration: 0.5s;
+}
+.nextBtnS{
+  display: inline-block;
+  vertical-align: middle;
+  color: black;
   transition-duration: 0.5s;
 }
 .nextBtn:hover{
   color: black;
-}
-.nextBtnS{
-  display: inline;
-  cursor: pointer;
-  margin-right:auto;
-  margin-left:0;
-  color: black;
-  transition-duration: 0.5s;
 }

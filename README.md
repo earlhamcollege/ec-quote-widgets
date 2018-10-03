@@ -2,14 +2,9 @@
 An [Apostrophe CMS](http://apostrophecms.org/) module to provide a quote block
 for your content. A mandatory quote content region, along with two optional
 regions for an author name and any other author information that may be
-important to include.
+important to include. Supports using multiple quotes as an array, with a
+configurable rotation speed and optional control buttons.
 
-## Example
-This widget is meant to have data entered in the following manner:
-
-Quote: 'This statement is the content of the quote'
-Author: 'Porter L'
-Author Info: 'An Earlham College student from Berea, KY'
 
 
 ## Install
@@ -34,4 +29,4 @@ These hex values can be edited without impacting the functionality.
 
 
 ## Screenshots
-![Alt text](/demo/screenshot1.png?raw=true "screenshot 1")
+![Alt text](https://i.postimg.cc/KjFtGNdk/ec-quote-widget_screenshot.png)

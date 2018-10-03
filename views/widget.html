@@ -1,4 +1,4 @@
-<div class="ec-quote-container-{{ data.widget.quote_container_color }}">
+<div class="ec-quote-container-{{ data.widget.quote_container_color }} instance-{{ data.widget._id }}">
 
   <div id="slides">
     {% for item in data.widget.quote_array %}
@@ -25,12 +25,16 @@
   </div>
 
   {% if data.widget.nav_toggle == true %}
-  <div id="slideControls slideControls-{{ data.widget.quote_container_color }}">
-    {% for item in data.widget.quote_array %}
-      <div class="nextBtn" onclick="pickSlide({{loop.index0}})">•</div>
-    {% endfor %}
+    <div class="centerBtn">
+    <div class="btnParent">
 
-  </div>
+      {% for item in data.widget.quote_array %}
+        <div class="nextBtn" onclick="pickSlide({{loop.index0}})">•</div>
+      {% endfor %}
+
+    </div>
+    </div>
+
   {% endif %}
 
 </div>
@@ -39,44 +43,55 @@
 <script>
   //control vars
   var inc = {{ data.widget.speed }} * 1000
-  var slides = document.querySelectorAll('#slides .slide');
-  var btns = document.querySelectorAll('.nextBtn');
-  btns[0].className = 'nextBtnS';
+  var slides = document.querySelectorAll('.instance-{{ data.widget._id }} .slide');
+  console.log(slides);
+  var btns = document.querySelectorAll('.instance-{{ data.widget._id }} .nextBtn');
+  if (btns.length > 0) {
+    btns[0].className = 'nextBtnS';
+  }
   var currentSlide = 0;
+  var prevSlide = 0;
   var slideInterval = setInterval(nextSlide,inc);
 
   //move to next slide
   function nextSlide() {
     if(slides.length > 1){
       slides[currentSlide].className = 'slide';
-      btns[currentSlide].className = 'nextBtn';
+      prevSlide = currentSlide;
       currentSlide = (currentSlide+1)%slides.length;
       slides[currentSlide].className = 'slide showing';
-      btns[currentSlide].className = 'nextBtnS';
+
+      setBtn(prevSlide, currentSlide);
     }
   }
   //move to prev slide
   function prevSlide() {
     if (slides.length > 1){
       slides[currentSlide].className = 'slide';
-      btns[currentSlide].className = 'nextBtn';
+      prevSlide = currentSlide;
       if (currentSlide > 0) {
         currentSlide = (currentSlide - 1);
       }else{
         currentSlide = (slides.length - 1);
       }
       slides[currentSlide].className = 'slide showing';
-      btns[currentSlide].className = 'nextBtnS';
+      setBtn(prevSlide, currentSlide);
     }
   }
   //move to n slide
   function pickSlide(n) {
     clearInterval(slideInterval);
     slides[currentSlide].className = 'slide';
-    btns[currentSlide].className = 'nextBtn';
+    prevSlide = currentSlide;
     currentSlide = n;
     slides[currentSlide].className = 'slide showing';
-    btns[currentSlide].className = 'nextBtnS';
+    setBtn(prevSlide, currentSlide);
     slideInterval = setInterval(nextSlide,inc);
+  }
+  function setBtn(x,y){
+    if (btns.length > 0) {
+      btns[x].className = 'nextBtn';
+      btns[y].className = 'nextBtnS';
+    }
   }
 </script>
