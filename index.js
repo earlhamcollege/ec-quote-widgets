@@ -124,5 +124,9 @@ module.exports = {
     self.pushAsset('stylesheet','ec-quote');
     self.pushAsset('stylesheet','variables');
     self.pushAsset('stylesheet','carousel');
+    self.pushAsset('script','actions');
+    self.play = function($widget,data,options) {
+      console.log(data);
+    };
   }
 };

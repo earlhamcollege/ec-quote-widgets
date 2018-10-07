@@ -1,5 +1,4 @@
-<div class="ec-quote-container-{{ data.widget.quote_container_color }} instance-{{ data.widget._id }}">
-
+<div class="ec-quote-container-{{ data.widget.quote_container_color }} instance-{{ data.widget._id }}" data-speed="{{ data.widget.speed }}">
   <div id="slides">
     {% for item in data.widget.quote_array %}
       {% if loop.first %}
@@ -7,7 +6,6 @@
       {% else %}
         <div class="slide">
       {% endif %}
-
       <div class="ec-quote-content"> {{ apos.areas.richText(item.quote) }} </div>
       <p class="ec-quote-author">
         <span class="ec-quote-author-color-{{ data.widget.quote_author_color }}">
@@ -18,80 +16,16 @@
       </p>
       <p class="ec-quote-author-info"> {{ item.author_info }} </p>
       </div>
-
     {% endfor %}
-
-
   </div>
-
   {% if data.widget.nav_toggle == true %}
     <div class="centerBtn">
     <div class="btnParent">
-
       {% for item in data.widget.quote_array %}
         <div class="nextBtn" onclick="pickSlide({{loop.index0}})">•</div>
       {% endfor %}
-
     </div>
     </div>
-
   {% endif %}
-
 </div>
 </div>
-
-<script>
-  //control vars
-  var inc = {{ data.widget.speed }} * 1000
-  var slides = document.querySelectorAll('.instance-{{ data.widget._id }} .slide');
-  console.log(slides);
-  var btns = document.querySelectorAll('.instance-{{ data.widget._id }} .nextBtn');
-  if (btns.length > 0) {
-    btns[0].className = 'nextBtnS';
-  }
-  var currentSlide = 0;
-  var prevSlide = 0;
-  var slideInterval = setInterval(nextSlide,inc);
-
-  //move to next slide
-  function nextSlide() {
-    if(slides.length > 1){
-      slides[currentSlide].className = 'slide';
-      prevSlide = currentSlide;
-      currentSlide = (currentSlide+1)%slides.length;
-      slides[currentSlide].className = 'slide showing';
-
-      setBtn(prevSlide, currentSlide);
-    }
-  }
-  //move to prev slide
-  function prevSlide() {
-    if (slides.length > 1){
-      slides[currentSlide].className = 'slide';
-      prevSlide = currentSlide;
-      if (currentSlide > 0) {
-        currentSlide = (currentSlide - 1);
-      }else{
-        currentSlide = (slides.length - 1);
-      }
-      slides[currentSlide].className = 'slide showing';
-      setBtn(prevSlide, currentSlide);
-    }
-  }
-  //move to n slide
-  function pickSlide(n) {
-    clearInterval(slideInterval);
-    slides[currentSlide].className = 'slide';
-    prevSlide = currentSlide;
-    currentSlide = n;
-    slides[currentSlide].className = 'slide showing';
-    setBtn(prevSlide, currentSlide);
-    slideInterval = setInterval(nextSlide,inc);
-  }
-  function setBtn(x,y){
-    if (btns.length > 0) {
-      btns[x].className = 'nextBtn';
-      btns[y].className = 'nextBtnS';
-    }
-  }
-</script>
