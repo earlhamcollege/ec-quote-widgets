@@ -28,7 +28,8 @@ module.exports = {
           widgetType: 'apostrophe-rich-text',
           required: true,
           options: {
-              toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ]
+              toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ],
+              limit: 400
           }
         }
       ]

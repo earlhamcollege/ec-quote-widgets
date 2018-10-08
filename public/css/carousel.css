@@ -4,7 +4,7 @@ These styles support the carousel transitions of the quote widget
 
 #slides {
     position: relative;
-    height: 300px;
+    min-height: 200px;
     padding: 0px;
     margin: 0px;
 }

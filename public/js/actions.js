@@ -30,6 +30,7 @@ apos.define('ec-quote-widgets', {
 
 //move to next slide
 function nextSlide() {
+  clearInterval(slideInterval);
   if(slides.length > 1){
     slides[currentSlide].className = 'slide';
     prevSlide = currentSlide;
@@ -38,9 +39,11 @@ function nextSlide() {
 
     setBtn(prevSlide, currentSlide);
   }
+  slideInterval = setInterval(nextSlide,inc);
 }
 //move to prev slide
 function prevSlide() {
+  clearInterval(slideInterval);
   if (slides.length > 1){
     slides[currentSlide].className = 'slide';
     prevSlide = currentSlide;
@@ -52,6 +55,7 @@ function prevSlide() {
     slides[currentSlide].className = 'slide showing';
     setBtn(prevSlide, currentSlide);
   }
+  slideInterval = setInterval(nextSlide,inc);
 }
 //move to n slide
 function pickSlide(n) {
