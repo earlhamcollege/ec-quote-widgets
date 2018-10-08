@@ -1,31 +1,33 @@
-<div class="ec-quote-container-{{ data.widget.quote_container_color }} instance-{{ data.widget._id }}" data-speed="{{ data.widget.speed }}">
-  <div id="slides">
-    {% for item in data.widget.quote_array %}
-      {% if loop.first %}
-        <div class="slide showing">
-      {% else %}
-        <div class="slide">
-      {% endif %}
-      <div class="ec-quote-content"> {{ apos.areas.richText(item.quote) }} </div>
-      <p class="ec-quote-author">
-        <span class="ec-quote-author-color-{{ data.widget.quote_author_color }}">
-          <span class="ec-quote-text-color-{{ data.widget.quote_text_color }}">
-            {{ item.author }}
-          </span>
-        </span>
-      </p>
-      <p class="ec-quote-author-info"> {{ item.author_info }} </p>
-      </div>
-    {% endfor %}
-  </div>
-  {% if data.widget.nav_toggle == true %}
-    <div class="centerBtn">
-    <div class="btnParent">
+<div class="{{ data.widget._id }}">
+  <div class="ec-quote-container-{{ data.widget.quote_container_color }}" data-speed="{{ data.widget.speed }}">
+    <div id="slides">
       {% for item in data.widget.quote_array %}
-        <div class="nextBtn" onclick="pickSlide({{loop.index0}})">•</div>
+        {% if loop.first %}
+          <div name="{{ data.widget._id }}" class="slide showing">
+        {% else %}
+          <div name="{{ data.widget._id }}" class="slide">
+        {% endif %}
+        <div class="ec-quote-content"> {{ apos.areas.richText(item.quote) }} </div>
+        <p class="ec-quote-author">
+          <span class="ec-quote-author-color-{{ data.widget.quote_author_color }}">
+            <span class="ec-quote-text-color-{{ data.widget.quote_text_color }}">
+              {{ item.author }}
+            </span>
+          </span>
+        </p>
+        <p class="ec-quote-author-info"> {{ item.author_info }} </p>
+        </div>
       {% endfor %}
     </div>
-    </div>
-  {% endif %}
-</div>
+    {% if data.widget.nav_toggle == true %}
+      <div class="centerBtn">
+      <div class="btnParent">
+        {% for item in data.widget.quote_array %}
+          <div class="nextBtn" onclick="pickSlide({{loop.index0}})">•</div>
+        {% endfor %}
+      </div>
+      </div>
+    {% endif %}
+  </div>
+  </div>
 </div>
