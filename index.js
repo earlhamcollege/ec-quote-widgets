@@ -37,16 +37,14 @@ module.exports = {
     {
       name: 'speed',
       type: 'integer',
-      def: 5,
       label: 'Display Rotate Speed (seconds)',
-      required: true
+      required: false
     },
     {
       name: 'nav_toggle',
       type: 'boolean',
-      label: 'Show or hide navigation for quotes',
-      required: true,
-      def: false
+      label: 'Show navigation for quotes',
+      required: false,
     },
     {
       name: 'quote_author_color',
@@ -122,12 +120,16 @@ module.exports = {
     }
   ],
   construct: function (self, options) {
-    self.pushAsset('stylesheet','ec-quote');
-    self.pushAsset('stylesheet','variables');
-    self.pushAsset('stylesheet','carousel');
-    self.pushAsset('script','actions');
-    self.play = function($widget,data,options) {
-      console.log(data);
-    };
+    var superPushAssets = self.pushAssets;
+    self.pushAssets = function() {
+      superPushAssets();
+      self.pushAsset('stylesheet','ec-quote');
+      self.pushAsset('stylesheet','variables');
+      self.pushAsset('stylesheet','slick');
+  		//self.pushAsset('stylesheet','slick-theme');
+  		self.pushAsset('stylesheet','always');
+  		self.pushAsset('script','slick.min');
+  		self.pushAsset('script','always');
+    }
   }
 };
