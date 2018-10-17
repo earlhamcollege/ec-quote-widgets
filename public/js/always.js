@@ -9,7 +9,7 @@ apos.define('ec-quote-widgets', {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        dots: true,
+        dots: data.nav_toggle,
         infinite: true,
         autoplay: true,
         autoplaySpeed: inst_speed,
