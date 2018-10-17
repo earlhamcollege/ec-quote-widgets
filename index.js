@@ -126,8 +126,7 @@ module.exports = {
       self.pushAsset('stylesheet','ec-quote');
       self.pushAsset('stylesheet','variables');
       self.pushAsset('stylesheet','slick');
-  		//self.pushAsset('stylesheet','slick-theme');
-  		self.pushAsset('stylesheet','always');
+  		self.pushAsset('stylesheet','slick-theme');
   		self.pushAsset('script','slick.min');
   		self.pushAsset('script','always');
     }
