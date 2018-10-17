@@ -47,6 +47,12 @@ module.exports = {
       required: false,
     },
     {
+      name: 'autoplay_toggle',
+      type: 'boolean',
+      label: 'Automatically rotate (if multiple)',
+      required: false
+    },
+    {
       name: 'quote_author_color',
       type: 'select',
       required: false,
@@ -111,7 +117,7 @@ module.exports = {
     {
       name:'content',
       label:'Content Settings',
-      fields: ['quote_array','speed','nav_toggle']
+      fields: ['quote_array','speed','nav_toggle','autoplay_toggle']
     },
     {
       name:'color',
