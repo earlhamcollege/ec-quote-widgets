@@ -129,12 +129,14 @@ module.exports = {
     var superPushAssets = self.pushAssets;
     self.pushAssets = function() {
       superPushAssets();
-      self.pushAsset('stylesheet','ec-quote');
-      self.pushAsset('stylesheet','variables');
-      self.pushAsset('stylesheet','slick');
-  		self.pushAsset('stylesheet','slick-theme');
-  		self.pushAsset('script','slick.min');
-  		self.pushAsset('script','always');
+      superPushAssets();
+			self.pushAsset('stylesheet', 'node_modules/slick-carousel/slick/slick');
+			self.pushAsset('stylesheet', 'node_modules/slick-carousel/slick/slick-theme');
+			self.pushAsset('stylesheet', 'always');
+      self.pushAsset('stylesheet', 'variables');
+			self.pushAsset('stylesheet', 'custom');
+			self.pushAsset('script', 'node_modules/slick-carousel/slick/slick');
+      self.pushAsset('script', 'always');
     }
   }
 };
