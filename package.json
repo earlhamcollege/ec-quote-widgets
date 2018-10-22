@@ -1,6 +1,6 @@
 {
   "name": "ec-quote-widgets",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "Place Single Quote with large quotemarks surrounding the quote.",
   "main": "index.js",
   "scripts": {
