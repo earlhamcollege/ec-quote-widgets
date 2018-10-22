@@ -1,0 +1,58 @@
+/*
+Fixed styles for quote widget
+*/
+.ec-quote-author{
+  margin-left: 100px;
+
+  span{
+    padding:1px;
+  }
+}
+
+.ec-quote-author-info{
+  margin-left: 100px;
+  color: darkgray;
+}
+.quote-item{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.ec-quote-content{
+  font-size: 15px;
+  margin: 0 auto;
+  quotes: "\201C""\201D""\2018""\2019";
+  padding: 10px 20px;
+  line-height: 1.6;
+  text-align: justify;
+  padding-left:20px;
+  padding-right:50px;
+  margin-left: 50px;
+  margin-right:50px;
+  margin-top:30px;
+}
+.ec-quote-content:before {
+  content: open-quote;
+  display: inline;
+  margin-left:-30px;
+  height: 0;
+  line-height: 0;
+  float: left;
+  top: 30px;
+  font-size: 3em;
+  text-shadow: 2px 2px gray;
+}
+.ec-quote-content::after {
+  content: close-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  float: right;
+  font-size: 3em;
+  text-shadow: 2px 2px gray;
+  margin-right: -30px;
+}
+.slick-dots{
+  margin-top: -30px;
+  font-size: 30px;
+}

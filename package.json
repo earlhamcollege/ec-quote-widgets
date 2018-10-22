@@ -1,6 +1,6 @@
 {
   "name": "ec-quote-widgets",
-  "version": "1.0.22",
+  "version": "1.0.24",
   "description": "Place Single Quote with large quotemarks surrounding the quote.",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/earlhamcollege/ec-quote-widgets#readme",
   "dependencies": {
-    "ec-360-widgets": "^1.0.0",
     "jquery": "^3.3.1",
     "slick-carousel": "^1.8.1"
   }
