@@ -17,6 +17,7 @@ apos.define('ec-quote-widgets', {
         speed: 500,
         fade: true,
         arrows: false,
+        draggable: false
       });
     };
   }
