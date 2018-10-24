@@ -130,13 +130,14 @@ module.exports = {
   },
   construct: function (self, options) {
     var superPushAssets = self.pushAssets;
-    
+
     self.pushAssets = function() {
       superPushAssets();
-      self.pushAsset('stylesheet','ec-quote');
       self.pushAsset('stylesheet','variables');
       self.pushAsset('stylesheet','slick');
   		self.pushAsset('stylesheet','slick-theme');
+      self.pushAsset('stylesheet','always');
+      self.pushAsset('stylesheet','custom');
   		self.pushAsset('script','slick.min');
   		self.pushAsset('script','always');
     }

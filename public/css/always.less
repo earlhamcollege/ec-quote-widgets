@@ -52,7 +52,16 @@ Fixed styles for quote widget
   text-shadow: 2px 2px gray;
   margin-right: -30px;
 }
+//adjust dot size from default to make them more visible
 .slick-dots{
-  margin-top: -30px;
-  font-size: 30px;
+  li{
+    button{
+      &:hover, &:focus {
+        background: transparent
+      }
+      &:before{
+        font-size: 15px;
+      }
+    }
+  }
 }

@@ -7,6 +7,7 @@ apos.define('ec-quote-widgets', {
         var inst_speed = data.speed * 1000 || 5000;
         var inst_autoplay = data.autoplay_toggle;
         var inst_dots = data.nav_toggle;
+        
       $widget.find("[data-ec-quote-"+data._id+"] .slider").slick({
         infinite: true,
         slidesToShow: 1,
