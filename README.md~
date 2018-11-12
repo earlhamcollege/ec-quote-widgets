@@ -14,13 +14,13 @@ In order to use this module, you should have:
 - ApostropheCMS
 #### Installing
 From within your apostrophe project directory, run
- `npm install --save ec-quote-widgets`
+ `npm install --save ec-table-widgets`
 
 Include widget in projects' app.js file:
 
 ```
   modules: {
-    'ec-quote-widgets': {},
+    'ec-table-widgets': {},
     // ... other modules
 }
 ```
