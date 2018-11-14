@@ -14,18 +14,20 @@ module.exports = {
             name: 'author',
             type: 'string',
             label: 'Quote Author',
-            required: false
+            required: true
           },
           {
             name: 'author_info',
             type: 'string',
             label: 'Quote Author Info',
+            help: 'for identifying info',
             required: false
           },
           {
             name: 'quote',
             label: 'Quote Contents',
             type: 'singleton',
+            help: 'limit 400 characters',
             widgetType: 'apostrophe-rich-text',
             required: true,
             options: {
@@ -39,18 +41,22 @@ module.exports = {
         name: 'speed',
         type: 'integer',
         label: 'Display Rotate Speed (seconds)',
+        help: 'Does not matter for single slide',
+        def: '5',
         required: false
       },
       {
         name: 'nav_toggle',
         type: 'boolean',
         label: 'Show navigation for quotes',
+        def: true,
         required: false,
       },
       {
         name: 'autoplay_toggle',
         type: 'boolean',
         label: 'Automatically rotate (if multiple)',
+        def: 'true',
         required: false
       },
       {
