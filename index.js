@@ -9,6 +9,7 @@ module.exports = {
         name: 'quote_array',
         type: 'array',
         label: 'Quote Array',
+	titleField: 'author',
         schema: [
           {
             name: 'author',
