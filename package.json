@@ -1,7 +1,7 @@
 {
   "name": "ec-quote-widgets",
-  "version": "1.0.30",
-  "description": "Place Single Quote with large quotemarks surrounding the quote.",
+  "version": "1.0.31",
+  "description": "Place Single Quote with large quotemarks surrounding the quote. Includes multiple modes for quote displpay",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

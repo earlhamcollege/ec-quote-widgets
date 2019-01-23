@@ -1,10 +1,10 @@
 ## QUOTE WIDGET
 An [Apostrophe CMS](http://apostrophecms.org/) module to provide a quote block
 for your content. A mandatory quote content region, along with two optional
-regions for an author name and any other author information that may be
+regions for an author name, a header and any other author information that may be
 important to include. Supports using multiple quotes as an array, with a
-configurable rotation speed and optional control buttons.
-
+configurable rotation speed and optional control buttons, and multiple preset styles which 
+display information in different arrangements. 
 
 
 ### GETTING STARTED
