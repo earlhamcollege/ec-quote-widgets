@@ -1,21 +1,31 @@
 <div data-ec-quote-{{data.widget._id}}>
   <div class="ec-quote-container-{{ data.widget.quote_container_color }}" data-speed="{{ data.widget.speed }}">
     <div data-ec-quote-container class="slider" >
+
       {% for item in data.widget.quote_array %}
+
         <div class="quote-item">
-          <div class="ec-quote-content"> {{ apos.areas.richText(item.quote) }} </div>
+          {% if data.widget.quote_mode == 1 %}
+            <p class="ec-quote-header"> {{ item.header }} </p>
+          {% endif %}
 
-          <p class="ec-quote-author">
-            <span class="ec-quote-author-color-{{ data.widget.quote_author_color }}">
-              <span class="ec-quote-text-color-{{ data.widget.quote_text_color }}">
-                {{ item.author }}
+          <div class="ec-quote-content-{{data.widget.quote_mode}}"> {{ apos.areas.richText(item.quote) | truncate( 400 ) }} </div>
+
+          {% if data.widget.quote_mode == 0 %}
+            <p class="ec-quote-author">
+              <span class="ec-quote-author-color-{{ data.widget.quote_author_color }}">
+                <span class="ec-quote-text-color-{{ data.widget.quote_text_color }}">
+                  {{ item.author }}
+                </span>
               </span>
-            </span>
-          </p>
+            </p>
+            <p class="ec-quote-author-info"> {{ item.author_info }} </p>
+          {% endif %}
 
-          <p class="ec-quote-author-info"> {{ item.author_info }} </p>
         </div>
+
       {% endfor %}
+
     </div>
   </div>
 </div>

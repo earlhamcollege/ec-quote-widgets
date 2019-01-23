@@ -9,13 +9,19 @@ module.exports = {
         name: 'quote_array',
         type: 'array',
         label: 'Quote Array',
-	titleField: 'author',
+	      titleField: 'author',
         schema: [
           {
             name: 'author',
             type: 'string',
             label: 'Quote Author',
             required: true
+          },
+          {
+            name: 'header',
+            type: 'string',
+            label: 'Header',
+            required: false
           },
           {
             name: 'author_info',
@@ -49,16 +55,27 @@ module.exports = {
       {
         name: 'nav_toggle',
         type: 'boolean',
-        label: 'Show navigation for quotes',
+        label: 'Show navigation for content',
+        help: 'Does not matter for single slide',
         def: true,
         required: false,
       },
       {
         name: 'autoplay_toggle',
         type: 'boolean',
-        label: 'Automatically rotate (if multiple)',
+        help: 'Does not matter for single slide',
+        label: 'Automatically rotate',
         def: 'true',
         required: false
+      },
+      {
+        type: 'range',
+        name: 'truncate',
+        label: 'Character Truncate',
+        min: 100,
+        max: 500,
+        step: 10, // optional
+        def: 200
       },
       {
         name: 'quote_author_color',
@@ -85,6 +102,27 @@ module.exports = {
           {
             label: 'Color 4 (Blue)',
             value: '4'
+          }
+        ]
+      },
+      {
+        name: 'quote_mode',
+        type: 'select',
+        required: true,
+        def: '0',
+        label: 'Select Text Mode',
+        choices: [
+          {
+            label: 'Quote Mode',
+            value: '0'
+          },
+          {
+            label: 'General Mode',
+            value: '1'
+          },
+          {
+            label: 'Simplified Mode',
+            value: '2'
           }
         ]
       },
@@ -124,14 +162,19 @@ module.exports = {
 
     options.arrangeFields = [
       {
-        name:'content',
-        label:'Content Settings',
-        fields: ['quote_array','speed','nav_toggle','autoplay_toggle']
+        name:'general',
+        label:'General Settings',
+        fields: ['quote_mode','speed','nav_toggle','autoplay_toggle','truncate']
       },
       {
-        name:'color',
-        label:'Color Settings',
+        name:'style',
+        label:'Style Settings',
         fields: ['quote_author_color','quote_text_color','quote_container_color']
+      },
+      {
+        name:'content',
+        label: 'Content Settings',
+        fields: ['quote_array']
       }
     ].concat(options.arrangeFields || [])
   },

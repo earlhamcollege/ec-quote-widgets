@@ -17,8 +17,13 @@ Fixed styles for quote widget
   margin-left: 20px;
   margin-right: 20px;
 }
+.ec-quote-header{
+  margin-top: 30px;
+  text-align: center;
+  font-size: 24px;
+}
 
-.ec-quote-content{
+.ec-quote-content-0{ // mode quote (0)
   font-size: 15px;
   margin: 0 auto;
   quotes: "\201C""\201D""\2018""\2019";
@@ -31,7 +36,31 @@ Fixed styles for quote widget
   margin-right:50px;
   margin-top:30px;
 }
-.ec-quote-content:before {
+.ec-quote-content-1{ //mode general (1)
+  font-size: 15px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  line-height: 1.6;
+  text-align: justify;
+  padding-left:20px;
+  padding-right:50px;
+  margin-left: 50px;
+  margin-right:50px;
+  margin-top:10px;
+}
+.ec-quote-content-2{ // mode simple (2)
+  font-size: 15px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  line-height: 1.6;
+  text-align: justify;
+  padding-left:20px;
+  padding-right:50px;
+  margin-left: 50px;
+  margin-right:50px;
+  margin-top:30px;
+}
+.ec-quote-content-0:before {
   content: open-quote;
   display: inline;
   margin-left:-30px;
@@ -42,7 +71,7 @@ Fixed styles for quote widget
   font-size: 3em;
   text-shadow: 2px 2px gray;
 }
-.ec-quote-content::after {
+.ec-quote-content-0::after {
   content: close-quote;
   display: inline;
   height: 0;
