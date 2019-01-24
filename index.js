@@ -41,7 +41,6 @@ module.exports = {
         name: 'speed',
         type: 'integer',
         label: 'Display Rotate Speed (seconds)',
-        help: 'Does not matter for single slide',
         def: '5',
         required: false
       },
@@ -49,14 +48,12 @@ module.exports = {
         name: 'nav_toggle',
         type: 'boolean',
         label: 'Show navigation for content',
-        help: 'Does not matter for single slide',
         def: true,
         required: false,
       },
       {
         name: 'autoplay_toggle',
         type: 'boolean',
-        help: 'Does not matter for single slide',
         label: 'Automatically rotate',
         def: 'true',
         required: false
@@ -158,6 +155,12 @@ module.exports = {
         name:'general',
         label:'General Settings',
         fields: ['quote_mode','speed','nav_toggle','autoplay_toggle','truncate']
+      },
+      {
+        name:'carousel',
+        help: 'Carousel settings only take effect with multiple slides',
+        label: 'Carousel Settings',
+        fields: ['nav_toggle','speed','autoplay_toggle']
       },
       {
         name:'style',
