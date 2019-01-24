@@ -6,10 +6,10 @@
 
         <div class="quote-item">
           {% if data.widget.quote_mode == 1 %}
-            <p class="ec-quote-header"> {{ item.header }} </p>
+            <p class="ec-quote-header"> {{ item.author }} </p>
           {% endif %}
 
-          <div class="ec-quote-content-{{data.widget.quote_mode}}"> {{ apos.areas.richText(item.quote) | truncate( 400 ) }} </div>
+          <div class="ec-quote-content-{{data.widget.quote_mode}}"> {{ apos.areas.richText(item.quote) | truncate( data.widget.truncate ) }} </div>
 
           {% if data.widget.quote_mode == 0 %}
             <p class="ec-quote-author">

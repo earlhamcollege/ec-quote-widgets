@@ -9,34 +9,27 @@ module.exports = {
         name: 'quote_array',
         type: 'array',
         label: 'Quote Array',
-	      titleField: 'author',
+	      titleField: 'data_array',
         schema: [
           {
             name: 'author',
             type: 'string',
-            label: 'Quote Author',
-            required: true
-          },
-          {
-            name: 'header',
-            type: 'string',
-            label: 'Header',
+            label: 'Author / Title',
             required: false
           },
           {
             name: 'author_info',
             type: 'string',
-            label: 'Quote Author Info',
-            help: 'for identifying info',
+            label: 'Short Description',
             required: false
           },
           {
             name: 'quote',
-            label: 'Quote Contents',
+            label: 'Main Content',
             type: 'singleton',
             help: 'limit 400 characters',
             widgetType: 'apostrophe-rich-text',
-            required: true,
+            required: false,
             options: {
                 toolbar: [ 'Bold', 'Italic', 'Link', 'Unlink' ],
                 limit: 400
