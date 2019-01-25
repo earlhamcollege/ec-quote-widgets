@@ -3,13 +3,14 @@ module.exports = {
   contextual: true,
   label: 'EC Quote',
   perPage: 50,
+  name: 'ec-quote',
   beforeConstruct: function(self, options) {
     options.addFields = [
       {
         name: 'quote_array',
         type: 'array',
         label: 'Quote Array',
-	      titleField: 'data_array',
+	      listItemTemplate: 'ec-quote-widgets:listItem.html',
         schema: [
           {
             name: 'author',
@@ -27,7 +28,7 @@ module.exports = {
             name: 'quote',
             label: 'Main Content',
             type: 'singleton',
-            help: 'limit 400 characters',
+            help: 'limited by truncate value',
             widgetType: 'apostrophe-rich-text',
             required: false,
             options: {
